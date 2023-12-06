@@ -33,6 +33,8 @@ def do_deploy(archive_path):
         run('mkdir -p {}'.format(decompressed_path))
         run('tar -xzf {} -C {}/'.format(remote_path, decompressed_path))
         run('rm -f {}'.format(remote_path))
+        run(f'mv {decompressed_path}/web_static/* {decompressed_path}/')
+        run(f'rm -rf {decompressed_path}/web_static')
         run(f'ln -sf {decompressed_path} /data/web_static/current')
         return True
     except Exception as e:
