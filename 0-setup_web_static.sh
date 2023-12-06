@@ -32,8 +32,9 @@ printf "server {
 		add_header X-Served-By \"%s\";
 	}
 
-	location /hbnb_static/ {
+	location /hbnb_static {
 		alias /data/web_static/current/;
+		index index.html;
 	}
 
 	location /redirect_me {

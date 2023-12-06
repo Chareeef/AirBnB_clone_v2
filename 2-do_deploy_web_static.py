@@ -5,7 +5,8 @@ Fabric tasks to deploy web_static on our servers
 from fabric.api import local, run, put, env
 from datetime import datetime
 
-env.hosts = ['52.91.178.165', 'ubuntu@18.206.198.119']
+env.hosts = ['52.91.178.165', '18.206.198.119']
+env.user = 'ubuntu'
 
 
 def do_pack():
@@ -30,13 +31,15 @@ def do_deploy(archive_path):
         file_without_tgz = archive_path.split('.')[0].split('/')[-1]
         remote_path = '/tmp/' + archive_path.split('/')[-1]
         decompressed_path = f'/data/web_static/releases/{file_without_tgz}'
+        run(f'rm -rf {decompressed_path}')
         run('mkdir -p {}'.format(decompressed_path))
         run('tar -xzf {} -C {}/'.format(remote_path, decompressed_path))
         run('rm -f {}'.format(remote_path))
         run(f'mv {decompressed_path}/web_static/* {decompressed_path}/')
         run(f'rm -rf {decompressed_path}/web_static')
-        run(f'ln -sf {decompressed_path} /data/web_static/current')
+        run(f'rm -f /data/web_static/current')
+        run(f'ln -s {decompressed_path} /data/web_static/current')
+        print('New version deployed!')
         return True
     except Exception as e:
-        print(e)
         return False
