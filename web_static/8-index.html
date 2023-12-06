@@ -1,129 +1,162 @@
 <!DOCTYPE html>
+
 <html lang="en">
-	<head>
-		<title>AirBnB clone</title>
 
-		<link rel="shortcut icon" href="images/icon.ico" >
+    <head>
 
-		<link rel="stylesheet" href="styles/4-common.css"/>
-		<link rel="stylesheet" href="styles/3-header.css"/>
-		<link rel="stylesheet" href="styles/3-footer.css"/>
-		<link rel="stylesheet" href="styles/6-filters.css"/>
-		<link rel="stylesheet" href="styles/8-places.css"/>
-	</head>
+        <title>AirBnB Clone</title>
+
+        <link rel="stylesheet" type="text/css" href="styles/4-common.css">
+        <link rel="stylesheet" type="text/css" href="styles/3-header.css">
+        <link rel="stylesheet" type="text/css" href="styles/6-filters.css">
+        <link rel="stylesheet" type="text/css" href="styles/8-places.css">
+        <link rel="stylesheet" type="text/css" href="styles/3-footer.css">
+
+        <link rel="icon" type="image/png" href="images/icon.png">
+
+    </head>
+
     <body>
-		<header>
-			<div id="header_logo"></div>
-		</header>
-		<div class="container">
-			<section class="filters">
-				<button>Search</button>
-				<div class="locations">
-					<h3>States</h3>
-					<h4>California, Arizona...</h4>
-					<ul class="popover">
-						<li><h2>Arizona</h2>
-							<ul>
-								<li><h4>Page</h4></li>
-								<li><h4>Page2</h4></li>
-							</ul></li>
-						<li><h2>California</h2>
-							<ul>
-								<li><h4>San Francisco</h4></li>
-								<li><h4>Los Altos</h4></li>
-							</ul></li>
-					</ul>
-				</div>
-				<div class="amenities">
-					<h3>Amenities</h3>
-					<h4>Internet, Kitchen...</h4>
-					<ul class="popover">
-						<li><h4>Internet</h4></li>
-						<li><h4>TV</h4></li>
-						<li><h4>Kitchen</h4></li>
-						<li><h4>Iron</h4></li>
-					</ul>
-				</div>
 
-			</section>
-			<section class="places">
-				<h1>Places</h1>
-				<article>
-					<div class="headline">
-						<h2>My home</h2>
-						<div class="price_by_night">$80</div>
-					</div>
-					<div class="information">
-						<div class="max_guest">
-							<div class="guest_icon"></div>
-							<p>2 Guests</p>
-						</div>
-						<div class="number_rooms">
-							<div class="bed_icon"></div>
-							<p>1 Bedroom</p>
-						</div>
-						 <div class="number_bathrooms">
-							<div class="bath_icon"></div>
-							<p>1 Bathroom</p>
-						</div>
-					</div>
-					<div class="user"><b>Owner</b>: John Lennon</div>
-					<div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </div>
-				</article>
-				<article>
-					<div class="headline">
-						<h2>Tiny house</h2>
-						<div class="price_by_night">$65</div>
-					</div>
-					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>4 Guests</p>
+        <!-- Header -->
+
+        <header>
+        </header>
+
+        <!-- container -->
+
+        <div class="container">
+
+            <!-- filter section -->
+
+            <section class="filter">
+
+                <!-- locations -->
+
+                <div class="locations">
+                    <h3>States</h3>
+                    <h4>California, Arizona...</h4>
+
+                    <!-- popover -->
+
+                    <ul class="popover">
+                        <li><h2>California:</h2></li>
+                        <li>
+                            <ul class="nested-list">
+                                <li>San Diego</li>
+                                <li>San Jose</li>
+                            </ul>
+                        </li>
+                        <li><h2>Arizona:</h2></li>
+                        <li>
+                            <ul class="nested-list">
+                                <li>Los Angeles</li>
+                                <li>San Francisco</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- amenities -->
+
+                <div class="amenities">
+                    <h3>Amenities</h3>
+                    <h4>Internet, Kitchen...</h4>
+
+                    <ul class="popover amenities-list">
+                            <li>Internet</li>
+                            <li>Kitchen</li>
+                            <li>Jacuzzi</li>
+                            <li>TV</li>
+                    </ul>
+                </div>
+
+                <button>Search</button>
+
+            </section>
+
+            <!-- places section -->
+
+            <section class="places">
+
+                <h1>Places</h1>
+
+                <div class="flex-places">
+
+                    <article>
+
+                        <div class="name_price">
+                            <h2>My Home</h2>
+                            <div class="price_by_night">90$</div>
                         </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>2 Bedroom</p>
+
+                        <div class="information">
+                            <div class="max_guests">4 Guests</div>
+                            <div class="number_rooms">2 Bedrooms</div>
+                            <div class="number_bathrooms">2 Bathrooms</div>
                         </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>1 Bathroom</p>
+
+                        <div class="user">
+                            <strong>Owner:</strong> Mohamed Ali
                         </div>
-                    </div>
-					<div class="user"><b>Owner</b>: Adrienne</div>
-					<div class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
-				</article>
-				<article>
-					<div class="headline">
-						<h2>A suite</h2>
-						<div class="price_by_night">$180</div>
-					</div>
-					<div class="information">
-                        <div class="max_guest">
-                            <div class="guest_icon"></div>
-                            <p>5 Guests</p>
+                        <div class="description">
+                            Welcome to our charming house, nestled in the vibrant city center. This spacious house offers a fully equipped kitchen, a lush garden, and a comfortable living room, perfect for family getaways or group vacations. You'll be just a short walk away from local attractions, restaurants, and entertainment. Experience the city like a local while enjoying the comforts of home.
                         </div>
-                        <div class="number_rooms">
-                            <div class="bed_icon"></div>
-                            <p>3 Bedroom</p>
+
+                    </article>
+
+                    <article>
+
+                        <div class="name_price">
+                            <h2>Tiny House</h2>
+                            <div class="price_by_night">65$</div>
                         </div>
-                         <div class="number_bathrooms">
-                            <div class="bath_icon"></div>
-                            <p>2 Bathroom</p>
+
+                        <div class="information">
+                            <div class="max_guests">2 Guests</div>
+                            <div class="number_rooms">1 Bedrooms</div>
+                            <div class="number_bathrooms">1 Bathrooms</div>
                         </div>
-                    </div>
-					<div class="user"><b>Owner</b>: Betty Holberton</div>
-					<div class="description">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</div>
-				</article>
-			</section>
-		</div>
-		<footer>
-			<p>Holberton School</p>
-		</footer>
-	</body>
+
+                        <div class="user">
+                            <strong>Owner:</strong> Stephen Williams
+                        </div>
+                        <div class="description">
+                            Experience the beauty of minimalist living in our tiny house retreat, situated by a serene lake. This cozy space features a compact yet functional kitchen, a comfortable sleeping loft, and large windows that provide stunning views of the water. Perfect for couples looking for a romantic getaway or solo travelers seeking tranquility in nature. Unplug, relax, and immerse yourself in the peaceful surroundings.
+                        </div>
+
+                    </article>
+
+                    <article>
+
+                        <div class="name_price">
+                            <h2>A suite</h2>
+                            <div class="price_by_night">160$</div>
+                        </div>
+
+                        <div class="information">
+                            <div class="max_guests">5 Guests</div>
+                            <div class="number_rooms">3 Bedrooms</div>
+                            <div class="number_bathrooms">2 Bathrooms</div>
+                        </div>
+
+                        <div class="user">
+                            <strong>Owner:</strong> Tony Joubert
+                        </div>
+                        <div class="description">
+                            Indulge in the lap of luxury with our spacious city view suite located in the heart of downtown. This suite features a king-size bed, a stylish living area, and a private balcony offering panoramic views of the city skyline. The fully equipped kitchenette and modern bathroom with a Jacuzzi tub provide all the comforts you need. Ideal for business travelers or those looking for a premium urban escape, this suite promises an unforgettable stay.
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+
+        <footer>
+            Best School
+        </footer>
+
+    </body>
+
 </html>
