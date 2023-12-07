@@ -29,11 +29,10 @@ def do_deploy(archive_path):
     try:
         if not os.path.isfile(archive_path):
             return False
-        file_path = archive_path.split('/')[-1] # web_static_xxxxxx.tgz
+        file_path = archive_path.split('/')[-1]  # web_static_xxxxxx.tgz
         name = file_path.split('.')[0]  # web_static_xxxxxx
         r_path = '/data/web_static/releases'
 
-        
         put(archive_path, f'/tmp/{file_path}')
         run(f'mkdir -p {r_path}/{name}/')
         run(f'tar -xzf /tmp/{file_path} -C {r_path}/{name}/')
