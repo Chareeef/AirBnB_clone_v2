@@ -41,7 +41,7 @@ exec { 'Update apt':
 }
 
 -> exec { 'chmod':
-  command  => 'sudo chown -R ubuntu:ubuntu /data/',
+  command  => 'sudo chown -R ubuntu:ubuntu /data',
   provider => shell,
 }
 
