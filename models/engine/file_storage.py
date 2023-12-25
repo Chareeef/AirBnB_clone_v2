@@ -63,3 +63,7 @@ class FileStorage:
         if obj in dict_objs.values():
             del dict_objs[f'{obj.to_dict()["__class__"]}.{obj.id}']
             self.save()
+
+    def close(self):
+        '''Reload objects'''
+        self.reload()
