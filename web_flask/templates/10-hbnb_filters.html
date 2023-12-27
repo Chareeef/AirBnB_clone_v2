@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>AirBnB Clone</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/4-common.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-header.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/6-filters.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-footer.css') }}">
+
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
+
+    </head>
+
+    <body>
+
+        <!-- Header -->
+
+        <header>
+        </header>
+
+        <!-- container -->
+
+        <div class="container">
+
+            <!-- filter section -->
+
+            <section class="filter">
+
+                <!-- locations -->
+
+                <div class="locations">
+                    <h3>States</h3>
+                    <h4>&nbsp</h4>
+
+                    <!-- popover -->
+
+                    <ul class="popover">
+                        {% for state in states %}
+                        <li><h2>{{ state.name }}</h2></li>
+                        <br>
+                        <li>
+                            <ul class="nested-list">
+                                {% for city in state.cities %}
+                                <li>{{ city.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- amenities -->
+
+                <div class="amenities">
+                    <h3>Amenities</h3>
+                    <h4>&nbsp</h4>
+
+                    <ul class="popover amenities-list">
+                            {% for amenity in amenities %}
+                            <li class="amenity">{{ amenity.name }}</li>
+                            {% endfor %}
+                    </ul>
+                </div>
+
+                <button>Search</button>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+
+        <footer>
+            Best School
+        </footer>
+
+    </body>
+
+</html>
