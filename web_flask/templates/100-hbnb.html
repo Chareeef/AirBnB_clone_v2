@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-header.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/6-filters.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-footer.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/8-places.css') }}">
 
         <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
 
@@ -69,6 +70,51 @@
                 <button>Search</button>
             </section>
 
+            <!-- places section -->
+
+            <section class="places">
+
+                <h1>Places</h1>
+
+                <div class="flex-places">
+
+                    {% for place in places %}
+                    <article>
+
+                        <div class="name_price">
+                            <h2 class="place_name">{{ place.name }}</h2>
+                            <div class="price_by_night">{{ place.price_by_night }}$</div>
+                        </div>
+
+                        <div class="information">
+                            {%- if place.max_guest == 1 %}
+                            <div class="max_guests">{{ place.max_guest }} Guest</div>
+                            {%- else %}
+                            <div class="max_guests">{{ place.max_guest }} Guests</div>
+                            {%- endif %}
+                            {%- if place.number_rooms == 1 %}
+                            <div class="number_rooms">{{ place.number_rooms }} Bedroom</div>
+                            {%- else %}
+                            <div class="number_rooms">{{ place.number_rooms }} Bedrooms</div>
+                            {%- endif %}
+                            {%- if place.number_bathrooms == 1 %}
+                            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathroom</div>
+                            {%- else %}
+                            <div class="number_bathrooms">{{ place.number_bathrooms }} Bathrooms</div>
+                            {%- endif %}
+                        </div>
+
+                        <div class="user">
+                            <strong>Owner:</strong> {{ place.owner_name }}
+                        </div>
+                        <div class="description">
+                            {{ place.description | safe }}
+                        </div>
+
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
         </div>
 
         <!-- Footer -->
