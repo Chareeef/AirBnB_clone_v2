@@ -58,7 +58,7 @@ def deploy():
 def do_clean(number=0):
     '''Delete out-of-date archives'''
 
-    n = number
+    n = int(number)
 
     if n == 0:
         n = 1
